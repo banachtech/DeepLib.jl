@@ -1,14 +1,12 @@
 module DeepLib
 
-using Expectations, Distributions
+using Reexport
 
-function foo(μ=1., σ=2.)
-    println("check mod")
-    d = Normal(μ, σ)
-    E = expectation(d)
-    return E(x -> sin(x))
-end
+@reexport using Flux
+using Random
+using LinearAlgebra
+include("importance.jl")
 
-export foo
+export importance
 
 end
