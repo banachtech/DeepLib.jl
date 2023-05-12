@@ -1,6 +1,7 @@
 using DeepLib
 using Test
 
+
 @testset "DeepLib.jl" begin
-    # Write your tests here.
+    @test foo(0.0) < 1e-16
 end
