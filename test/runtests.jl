@@ -8,8 +8,7 @@ using Random
     Y = X[2,:].^2 - 3.0*X[3,:].^3
     # simple model
     model(x) = vec(sum(x,dims=1))
-    # mse loss function
-    lossfn(m,x;target=nothing) = sum(abs2, m(x) .- target)
-    res = importance(model,lossfn,X,target=Y)
+    objfunc(x) = sum(abs2, model(x) .- Y)
+    res = importance(objfunc,X)
     @test length(res) == 4
 end
