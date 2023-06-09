@@ -7,7 +7,6 @@ Compute feature importance using mean changes in objective.
 - `features::Matrix{Float32}`: matrix of features; columns are feature vectors.
 - `objfunc::Function` is a scalar real-valued function with signature `objfunc(features)`
 - `iters::Integer`: number of samples used to calculate mean objective.
-- `target` is of the dimension `model(features)` and defaults to `nothing`.
 
 Returns a vector of mean changes in objective as defined by objfunc.
 """
