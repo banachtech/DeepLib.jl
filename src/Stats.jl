@@ -9,8 +9,7 @@ function newey_west(r)
     return (mean=μ, serr=se, tstat=t)
 end
 
-function winsorize(y::Array{Float64
-    }, p)
+function winsorize(y::Array{Float64}, p)
 x = deepcopy(y)
 q = quantile(x, [p, 1-p])
 x[x .> q[2]] .= q[2]
